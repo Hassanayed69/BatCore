@@ -1,0 +1,14 @@
+{
+  "name": "BatCORE — سعراتك وتمرينك",
+  "short_name": "BatCORE",
+  "description": "رفيقك اليومي لحساب السعرات، متابعة الأكل، وتنظيم التمرين.",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#F4F3EF",
+  "theme_color": "#0D0F0E",
+  "icons": [
+    { "src": "src/assets/favicon.png", "sizes": "any", "type": "image/png", "purpose": "any" }
+  ]
+}

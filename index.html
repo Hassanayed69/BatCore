@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>BatCORE — سعراتك وتمرينك</title>
+  <meta name="description" content="BatCORE رفيقك اليومي لحساب السعرات، متابعة الأكل، وتنظيم التمرين بخطة واضحة.">
+  <meta name="theme-color" content="#0D0F0E">
+  <link rel="icon" type="image/png" href="src/assets/favicon.png">
+  <link rel="apple-touch-icon" href="src/assets/favicon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="src/styles/main.css">
+</head>
+<body>
+  <svg class="svg-sprite" aria-hidden="true" focusable="false">
+    <!-- BatCORE icon set: square-cut stencil strokes, 45° corners, plate-like bars. -->
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M2.5 11 12 3.5 21.5 11"/><path d="M5 9.5V21h14V9.5"/><path d="M9.5 21v-5l2.5-2 2.5 2v5"/></symbol>
+    <symbol id="i-food" viewBox="0 0 24 24"><path d="M6.5 3v6a2.5 2.5 0 0 0 5 0V3"/><path d="M9 11.5V21"/><path d="M17 3v18"/><path d="M17 3l3 3v2l-3 2"/></symbol>
+    <symbol id="i-dumbbell" viewBox="0 0 24 24"><path d="M2.5 9.5v5M5.5 7v10M18.5 7v10M21.5 9.5v5M5.5 12h13"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M7 20.5v-5h3v5M12 20.5v-9h3v9"/><path d="M17 7.5h3v13h-3z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><path d="M9 4h6l1.5 1.5v5L15 12H9l-1.5-1.5v-5z"/><path d="M4 21v-2l4-3h8l4 3v2"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 4.5v15M4.5 12h15"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M4.5 12h15"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 2.5 15 7l-1 2.5 2.5 1 1 3a5.5 5.5 0 0 1-11 0l1-3 2.5-1-1-2.5z"/><path d="M12 12v5"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3 7 9v3.5a5 5 0 0 0 10 0V9z"/><path d="M9.5 12.5h5"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="M4 3h16v18H4z"/><path d="M8 7h8v3H8z"/><path d="M8.5 13.5a3.5 3.5 0 0 0 7 0"/><path d="M12 13.5 13.5 11"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><path d="M12 2.5v5M12 16.5v5M2.5 12h5M16.5 12h5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M3.5 5h17v16h-17z"/><path d="M8 3v4M16 3v4M3.5 10h17"/><path d="M7 13h3v3H7z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5.5h4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 13 4.5 4.5L20 5.5"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 6.5h16M9 6.5v-3h6v3"/><path d="M6 6.5l1 14h10l1-14"/><path d="M10.5 10v7M13.5 10v7"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></symbol>
+    <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m8.5 4.5 7.5 7.5-7.5 7.5"/></symbol>
+    <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15.5 4.5-7.5 7.5 7.5 7.5"/></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m4.5 8.5 7.5 7.5 7.5-7.5"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></symbol>
+    <symbol id="i-barcode" viewBox="0 0 24 24"><path d="M3.5 5v14M9 5v14M11.5 5v14M14.5 5v14M20.5 5v14"/><path d="M6 5v14M18 5v14" stroke-width="2.4"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 3.5h6v5l3 3v4H6v-4l3-3z"/><path d="M10 11.5h4M10 18.5h4M10.5 21h3"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13.5 2.5 4.5 13.5h6L9.5 21.5 19.5 10h-6z"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 9.3l6.1-.7L12 3Z"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M7 3.5h10v6a5 5 0 0 1-10 0z"/><path d="M7 5.5H4v2a3 3 0 0 0 3 3M17 5.5h3v2a3 3 0 0 1-3 3"/><path d="M12 14v4.5M8 21h8M9.5 18.5h5"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v11M7.5 9.5 12 14l4.5-4.5"/><path d="M4 20.5h16"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 14V3M7.5 7.5 12 3l4.5 4.5"/><path d="M4 20.5h16"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="M4 20h4L20.5 7.5 16.5 3.5 4 16z"/><path d="m14.5 5.5 4 4"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="8" r="4.5"/><path d="m11.2 11.2 9.3 9.3M17.5 17v-2.5M14.8 14.3v-2.5"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><path d="M4.5 10.5h15V21h-15z"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/><path d="M12 14v3.5"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 4.5v15l11-7.5z"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><path d="M12 3 21 12l-9 9-9-9z"/><path d="M12 10.5V16M12 7.5v.5"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M3.5 7.5h4L9 5h6l1.5 2.5h4v12h-17z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+    <symbol id="i-undo" viewBox="0 0 24 24"><path d="M4 9h9a5 5 0 0 1 0 10H8"/><path d="m4 9 4-4M4 9l4 4"/></symbol>
+    <symbol id="i-more" viewBox="0 0 24 24"><path d="M4.5 10.5h3v3h-3zM10.5 10.5h3v3h-3zM16.5 10.5h3v3h-3z" fill="currentColor" stroke="none"/></symbol>
+  </svg>
+
+  <div class="app">
+    <aside class="sidebar">
+      <a class="brand" href="#" data-nav="home" aria-label="BatCORE — الرئيسية">
+        <img class="brand-logo" src="src/assets/logo-brand.png" alt="BatCORE" width="150" height="42">
+        <span class="brand-text"><small>سعرات · تمرين · التزام</small></span>
+      </a>
+
+      <nav class="side-nav" aria-label="التنقل الرئيسي">
+        <button class="nav-item" data-nav="home"><svg class="icon"><use href="#i-home"/></svg><span>الرئيسية</span></button>
+        <button class="nav-item" data-nav="food"><svg class="icon"><use href="#i-food"/></svg><span>يوميات الأكل</span></button>
+        <button class="nav-item" data-nav="train"><svg class="icon"><use href="#i-dumbbell"/></svg><span>التمرين</span></button>
+        <button class="nav-item" data-nav="progress"><svg class="icon"><use href="#i-chart"/></svg><span>التقدم</span></button>
+        <button class="nav-item" data-nav="profile"><svg class="icon"><use href="#i-user"/></svg><span>حسابي</span></button>
+      </nav>
+
+      <div class="side-goal" id="side-goal"></div>
+      <div class="side-user" id="side-user"></div>
+      <p class="side-foot">BatCORE · نسخة 2.0</p>
+    </aside>
+
+    <div class="shell">
+      <header class="topbar">
+        <button class="brand-mobile" data-nav="home" aria-label="الرئيسية">
+          <img src="src/assets/logo-icon.png" alt="BatCORE" width="36" height="36">
+        </button>
+        <div class="topbar-title">
+          <p class="eyebrow" id="today-label"></p>
+          <h1 id="page-title">الرئيسية</h1>
+        </div>
+        <div class="topbar-actions">
+          <button class="streak-badge" id="streak-badge" type="button" title="أيام المتابعة المتتالية">
+            <svg class="icon"><use href="#i-flame"/></svg>
+            <span id="streak-count">0</span>
+          </button>
+          <button class="icon-btn" id="theme-toggle" type="button" aria-label="تغيير المظهر">
+            <svg class="icon theme-icon-light"><use href="#i-moon"/></svg>
+            <svg class="icon theme-icon-dark"><use href="#i-sun"/></svg>
+          </button>
+          <button class="btn btn-primary top-add" id="quick-add" type="button" aria-label="أضف أكلة">
+            <svg class="icon"><use href="#i-plus"/></svg>
+            <span>أضف أكلة</span>
+          </button>
+        </div>
+      </header>
+
+      <main id="main" class="main">
+        <section id="view-home" class="view" data-page="home"></section>
+        <section id="view-food" class="view" data-page="food" hidden></section>
+        <section id="view-train" class="view" data-page="train" hidden></section>
+        <section id="view-progress" class="view" data-page="progress" hidden></section>
+        <section id="view-profile" class="view" data-page="profile" hidden></section>
+      </main>
+    </div>
+  </div>
+
+  <nav class="bottom-nav" aria-label="التنقل">
+    <button data-nav="home"><svg class="icon"><use href="#i-home"/></svg><span>الرئيسية</span></button>
+    <button data-nav="food"><svg class="icon"><use href="#i-food"/></svg><span>الأكل</span></button>
+    <button data-nav="train"><svg class="icon"><use href="#i-dumbbell"/></svg><span>التمرين</span></button>
+    <button data-nav="progress"><svg class="icon"><use href="#i-chart"/></svg><span>التقدم</span></button>
+    <button data-nav="profile"><svg class="icon"><use href="#i-user"/></svg><span>حسابي</span></button>
+  </nav>
+
+  <dialog id="food-dialog" class="sheet">
+    <div class="dialog-panel">
+      <header class="dialog-head">
+        <button class="icon-btn" type="button" data-close-dialog aria-label="إغلاق">
+          <svg class="icon"><use href="#i-x"/></svg>
+        </button>
+        <div class="dialog-heading">
+          <p class="eyebrow" id="food-dialog-kicker">أضف للفطار</p>
+          <h2 id="food-dialog-title">اختار أكلة</h2>
+        </div>
+        <button class="icon-btn" type="button" id="food-scan" aria-label="قراءة باركود">
+          <svg class="icon"><use href="#i-barcode"/></svg>
+        </button>
+      </header>
+      <div id="food-dialog-body" class="dialog-body"></div>
+    </div>
+  </dialog>
+
+  <dialog id="ai-dialog" class="modal ai-modal">
+    <div class="dialog-panel">
+      <header class="dialog-head">
+        <button class="icon-btn" type="button" data-close-dialog aria-label="إغلاق">
+          <svg class="icon"><use href="#i-x"/></svg>
+        </button>
+        <div class="dialog-heading">
+          <p class="eyebrow" id="ai-kicker">تحليل صورة</p>
+          <h2 id="ai-title">صوّر أكلك</h2>
+        </div>
+        <span class="dialog-head-spacer"></span>
+      </header>
+      <div id="ai-body" class="dialog-body"></div>
+    </div>
+  </dialog>
+
+  <dialog id="weight-dialog" class="modal modal-sm">
+    <div class="dialog-panel">
+      <header class="dialog-head">
+        <button class="icon-btn" type="button" data-close-dialog aria-label="إغلاق">
+          <svg class="icon"><use href="#i-x"/></svg>
+        </button>
+        <div class="dialog-heading">
+          <p class="eyebrow">متابعة أسبوعية</p>
+          <h2>سجّل وزنك</h2>
+        </div>
+        <span class="dialog-head-spacer"></span>
+      </header>
+      <div class="dialog-body">
+        <form id="weight-form" class="stack">
+          <label class="field">الوزن (كجم)
+            <input id="weight-input" name="weight" type="number" min="30" max="300" step="0.1" required>
+          </label>
+          <label class="field">التاريخ
+            <input id="weight-date" name="date" type="date" required>
+          </label>
+          <button class="btn btn-primary btn-block" type="submit">حفظ الوزن</button>
+        </form>
+        <div id="weight-history" class="weight-history"></div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="welcome" class="welcome" aria-labelledby="welcome-verse">
+    <div class="welcome-panel">
+      <img class="welcome-logo" src="src/assets/logo-brand.png" alt="BatCORE" width="190" height="54">
+      <p class="welcome-kicker">BATCORE</p>
+      <p class="welcome-verse" id="welcome-verse" lang="ar" dir="rtl">﴿إِنَّ اللَّهَ لَا يُغَيِّرُ مَا بِقَوْمٍ حَتَّىٰ يُغَيِّرُوا مَا بِأَنْفُسِهِمْ﴾</p>
+      <p class="welcome-sub">خطوة واحدة تفصلك عن نسخة أقوى من نفسك.</p>
+      <button class="btn welcome-start" id="welcome-start" type="button">
+        <span>ابدأ رحلتك</span>
+        <svg class="icon" aria-hidden="true"><use href="#i-chevron-left"/></svg>
+      </button>
+      <p class="welcome-foot">سعرات · تمرين · التزام</p>
+    </div>
+  </dialog>
+
+  <dialog id="onboarding" class="modal onboarding">
+    <div class="dialog-panel">
+      <div class="onboard-hero">
+        <img class="onboard-logo" src="src/assets/logo-brand.png" alt="BatCORE" width="196" height="55">
+        <p class="eyebrow">أهلاً بيك في BatCORE</p>
+        <h2>خلّينا نحسب أرقامك صح</h2>
+        <p>دقيقة واحدة ونطلع لك هدف يومي مظبوط على حسب جسمك ونشاطك.</p>
+      </div>
+      <form id="onboard-form" class="dialog-body">
+        <label class="field">اسمك (اختياري)
+          <input name="name" type="text" maxlength="40" placeholder="مثلاً أحمد" autocomplete="name">
+        </label>
+        <div class="form-grid">
+          <label class="field">النوع
+            <select name="sex">
+              <option value="male">ذكر</option>
+              <option value="female">أنثى</option>
+            </select>
+          </label>
+          <label class="field">السن
+            <input name="age" type="number" min="14" max="90" value="25" required>
+          </label>
+          <label class="field">الطول (سم)
+            <input name="height" type="number" min="120" max="230" value="175" required>
+          </label>
+          <label class="field">الوزن (كجم)
+            <input name="weight" type="number" min="30" max="300" step="0.1" value="80" required>
+          </label>
+        </div>
+        <label class="field">مستوى النشاط
+          <select name="activity">
+            <option value="sedentary">قليل الحركة — شغل مكتبي</option>
+            <option value="light">خفيف — تمرين 1–3 أيام</option>
+            <option value="moderate" selected>متوسط — تمرين 3–5 أيام</option>
+            <option value="high">عالي — تمرين 6–7 أيام</option>
+            <option value="athlete">رياضي — مجهود يومي عالي</option>
+          </select>
+        </label>
+        <fieldset class="field">
+          <legend>هدفك</legend>
+          <div class="choice-row">
+            <label class="choice"><input type="radio" name="goal" value="cut" checked><span><strong>تنشيف</strong><small>أقل سعرات</small></span></label>
+            <label class="choice"><input type="radio" name="goal" value="maintain"><span><strong>ثبات</strong><small>حافظ على وزنك</small></span></label>
+            <label class="choice"><input type="radio" name="goal" value="bulk"><span><strong>بناء</strong><small>زيادة عضل</small></span></label>
+          </div>
+        </fieldset>
+        <label class="field" id="pace-field">سرعة التغيير
+          <select name="pace">
+            <option value="slow">هادية — 0.25 كجم/أسبوع</option>
+            <option value="moderate" selected>متوسطة — 0.5 كجم/أسبوع</option>
+            <option value="aggressive">سريعة — 0.75 كجم/أسبوع</option>
+          </select>
+        </label>
+        <button class="btn btn-primary btn-block btn-lg" type="submit">احسب هدفى وابدأ</button>
+        <button class="btn btn-ghost btn-block" type="button" id="onboard-skip">أبدأ بالإعدادات الافتراضية</button>
+        <p class="fine-print">الأرقام تقديرية باستخدام معادلة Mifflin-St Jeor، وليست بديلاً عن استشارة طبيب أو أخصائي تغذية.</p>
+      </form>
+    </div>
+  </dialog>
+
+  <dialog id="scan-dialog" class="modal modal-sm">
+    <div class="dialog-panel">
+      <header class="dialog-head">
+        <button class="icon-btn" type="button" data-close-dialog aria-label="إغلاق">
+          <svg class="icon"><use href="#i-x"/></svg>
+        </button>
+        <div class="dialog-heading">
+          <p class="eyebrow">Open Food Facts</p>
+          <h2>اقرأ الباركود</h2>
+        </div>
+        <span class="dialog-head-spacer"></span>
+      </header>
+      <div class="dialog-body">
+        <div class="scan-stage">
+          <video id="scan-video" playsinline muted hidden></video>
+          <div class="scan-frame" aria-hidden="true"></div>
+        </div>
+        <button class="btn btn-primary btn-block" id="scan-start" type="button">
+          <svg class="icon"><use href="#i-camera"/></svg>
+          افتح الكاميرا
+        </button>
+        <div class="or"><span>أو</span></div>
+        <form id="barcode-form" class="inline-form" novalidate>
+          <input id="barcode-input" inputmode="numeric" placeholder="اكتب رقم الباركود" pattern="[0-9]{8,14}" aria-label="رقم الباركود">
+          <button class="btn" type="submit">بحث</button>
+        </form>
+        <p id="scan-msg" class="hint" role="status"></p>
+        <div id="scan-result"></div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="exercise-dialog" class="modal modal-sm">
+    <div class="dialog-panel">
+      <header class="dialog-head">
+        <button class="icon-btn" type="button" data-close-dialog aria-label="إغلاق">
+          <svg class="icon"><use href="#i-x"/></svg>
+        </button>
+        <div class="dialog-heading">
+          <p class="eyebrow">تمرين إضافي</p>
+          <h2>أضف تمرين لليوم</h2>
+        </div>
+        <span class="dialog-head-spacer"></span>
+      </header>
+      <form id="exercise-form" class="dialog-body stack">
+        <label class="field">اسم التمرين (English)
+          <input name="en" type="text" maxlength="60" placeholder="e.g. Cable Triceps Extension" required>
+        </label>
+        <label class="field">الاسم بالعربي
+          <input name="name" type="text" maxlength="60" placeholder="مثلاً: تمديد الترايسبس بالكابل">
+        </label>
+        <div class="form-grid">
+          <label class="field">عدد المجاميع
+            <input name="sets" type="number" min="1" max="8" value="3" required>
+          </label>
+          <label class="field">العدات المستهدفة
+            <input name="reps" type="text" maxlength="12" value="8-12" required>
+          </label>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">أضف التمرين</button>
+      </form>
+    </div>
+  </dialog>
+
+  <div id="rest-timer" class="rest-timer" hidden role="status" aria-live="polite">
+    <div class="rest-timer-ring">
+      <svg viewBox="0 0 44 44"><circle class="rest-bg" cx="22" cy="22" r="18"/><circle id="rest-progress" class="rest-fg" cx="22" cy="22" r="18"/></svg>
+      <strong id="rest-count">0</strong>
+    </div>
+    <div class="rest-timer-text"><span>راحة بين المجاميع</span><strong id="rest-exercise">استعد للمجموعة الجاية</strong></div>
+    <button class="btn btn-sm" id="rest-skip" type="button">تخطي</button>
+  </div>
+
+  <div id="toast-root" class="toast-root" aria-live="polite" aria-atomic="false"></div>
+
+  <noscript><p style="padding:2rem;text-align:center">BatCORE محتاج JavaScript عشان يشتغل.</p></noscript>
+  <script type="module" src="src/js/main.js"></script>
+</body>
+</html>
