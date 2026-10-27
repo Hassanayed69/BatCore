@@ -1,0 +1,374 @@
+{
+  "_note": "الجدول مضبوط على أسبوع يبدأ السبت وينتهي الجمعة. القيم -1 تعني يوم راحة.",
+  "plans": [
+    {
+      "id": "ppl-5",
+      "name": "Push / Pull / Legs + Upper / Lower",
+      "level": "متوسط",
+      "daysPerWeek": 5,
+      "duration": 75,
+      "description": "تقسيمة 5 أيام للجيم تجمع بين تكرار العضلة مرتين أسبوعياً وحجم تدريب متوازن.",
+      "schedule": [0, 1, 2, -1, 3, 4, -1],
+      "days": [
+        {
+          "label": "Push",
+          "focus": "صدر · كتف · ترايسبس",
+          "ex": [
+            { "name": "بنش برس بالبار", "en": "Barbell Bench Press", "muscle": "صدر", "sets": 4, "reps": "6-8", "rest": 120 },
+            { "name": "دمبل انكلاين", "en": "Incline Dumbbell Press", "muscle": "صدر علوي", "sets": 3, "reps": "8-10", "rest": 90 },
+            { "name": "كتف ماكينة", "en": "Machine Shoulder Press", "muscle": "كتف", "sets": 3, "reps": "8-10", "rest": 90 },
+            { "name": "رفرفة جانبية", "en": "Lateral Raise", "muscle": "كتف جانبي", "sets": 4, "reps": "12-15", "rest": 60 },
+            { "name": "تراي كابل", "en": "Triceps Pushdown", "muscle": "ترايسبس", "sets": 3, "reps": "10-12", "rest": 60 },
+            { "name": "تراي خلف الرأس", "en": "Overhead Extension", "muscle": "ترايسبس", "sets": 3, "reps": "10-12", "rest": 60 }
+          ]
+        },
+        {
+          "label": "Pull",
+          "focus": "ظهر · بايسبس · كتف خلفي",
+          "ex": [
+            { "name": "سحب أمامي واسع", "en": "Wide Grip Lat Pulldown", "muscle": "ظهر", "sets": 4, "reps": "8-10", "rest": 90 },
+            { "name": "سحب بار منحني", "en": "Bent Over Row", "muscle": "ظهر", "sets": 4, "reps": "6-8", "rest": 120 },
+            { "name": "سحب أرضي بالكابل", "en": "Seated Cable Row", "muscle": "ظهر", "sets": 3, "reps": "10-12", "rest": 90 },
+            { "name": "رفرفة خلفية", "en": "Rear Delt Fly", "muscle": "كتف خلفي", "sets": 3, "reps": "12-15", "rest": 60 },
+            { "name": "باي كابل", "en": "Cable Curl", "muscle": "بايسبس", "sets": 3, "reps": "10-12", "rest": 60 },
+            { "name": "هامر كيرل", "en": "Hammer Curl", "muscle": "بايسبس", "sets": 3, "reps": "10-12", "rest": 60 }
+          ]
+        },
+        {
+          "label": "Legs",
+          "focus": "أرجل كاملة · سمانة · بطن",
+          "ex": [
+            { "name": "سكوات بالبار", "en": "Barbell Squat", "muscle": "أرجل", "sets": 4, "reps": "6-8", "rest": 150 },
+            { "name": "رفعة رومانية", "en": "Romanian Deadlift", "muscle": "خلفية", "sets": 3, "reps": "8-10", "rest": 120 },
+            { "name": "دفع أرجل", "en": "Leg Press", "muscle": "أرجل", "sets": 3, "reps": "10-12", "rest": 90 },
+            { "name": "تمديد أرجل", "en": "Leg Extension", "muscle": "أمامية", "sets": 3, "reps": "12-15", "rest": 60 },
+            { "name": "ثني أرجل", "en": "Leg Curl", "muscle": "خلفية", "sets": 3, "reps": "10-12", "rest": 60 },
+            { "name": "رفع سمانة واقف", "en": "Standing Calf Raise", "muscle": "سمانة", "sets": 4, "reps": "12-15", "rest": 60 }
+          ]
+        },
+        { "label": "يوم راحة", "focus": "استشفاء ومشي خفيف", "rest": true },
+        {
+          "label": "Upper",
+          "focus": "جزء علوي متكامل",
+          "ex": [
+            { "name": "بنش انكلاين بالبار", "en": "Incline Bench Press", "muscle": "صدر علوي", "sets": 3, "reps": "8-10", "rest": 90 },
+            { "name": "سحب بصدر مسند", "en": "Chest Supported Row", "muscle": "ظهر", "sets": 3, "reps": "8-10", "rest": 90 },
+            { "name": "كتف ماكينة", "en": "Machine Shoulder Press", "muscle": "كتف", "sets": 3, "reps": "10-12", "rest": 90 },
+            { "name": "سحب محايد", "en": "Neutral Grip Pulldown", "muscle": "ظهر", "sets": 3, "reps": "10-12", "rest": 90 },
+            { "name": "رفرفة كابل", "en": "Cable Lateral Raise", "muscle": "كتف جانبي", "sets": 3, "reps": "15", "rest": 45 },
+            { "name": "سوبرست باي وتراي", "en": "Biceps & Triceps Superset", "muscle": "ذراع", "sets": 3, "reps": "12", "rest": 60 }
+          ]
+        },
+        {
+          "label": "Lower",
+          "focus": "أرجل · بطن",
+          "ex": [
+            { "name": "هاك سكوات", "en": "Hack Squat", "muscle": "أرجل", "sets": 4, "reps": "8-10", "rest": 120 },
+            { "name": "رفعة رومانية بالدمبل", "en": "Dumbbell Romanian Deadlift", "muscle": "خلفية", "sets": 3, "reps": "8-10", "rest": 90 },
+            { "name": "طعن مشي", "en": "Walking Lunge", "muscle": "أرجل", "sets": 3, "reps": "10/رجل", "rest": 90 },
+            { "name": "ثني أرجل جلوس", "en": "Seated Leg Curl", "muscle": "خلفية", "sets": 3, "reps": "12", "rest": 60 },
+            { "name": "سمانة جلوس", "en": "Seated Calf Raise", "muscle": "سمانة", "sets": 4, "reps": "15", "rest": 45 },
+            { "name": "رفع ركب معلق", "en": "Hanging Knee Raise", "muscle": "بطن", "sets": 3, "reps": "12-15", "rest": 60 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "upper-lower-4",
+      "name": "Upper / Lower — 4 أيام",
+      "level": "متوسط",
+      "daysPerWeek": 4,
+      "duration": 70,
+      "description": "أربعة أيام تدريب مريحة للأسبوع المزدحم، بتكرار كل مجموعة عضلية مرتين.",
+      "schedule": [0, 1, -1, 2, 3, -1, -1],
+      "days": [
+        {
+          "label": "Upper A",
+          "focus": "قوة الجزء العلوي",
+          "ex": [
+            { "name": "بنش برس بالبار", "en": "Barbell Bench Press", "muscle": "صدر", "sets": 4, "reps": "6-8", "rest": 120 },
+            { "name": "سحب بار منحني", "en": "Bent Over Row", "muscle": "ظهر", "sets": 4, "reps": "8-10", "rest": 120 },
+            { "name": "كتف ماكينة", "en": "Machine Shoulder Press", "muscle": "كتف", "sets": 3, "reps": "8-10", "rest": 90 },
+            { "name": "سحب أمامي واسع", "en": "Wide Grip Pulldown", "muscle": "ظهر", "sets": 3, "reps": "10-12", "rest": 90 },
+            { "name": "رفرفة جانبية", "en": "Lateral Raise", "muscle": "كتف جانبي", "sets": 3, "reps": "12-15", "rest": 60 },
+            { "name": "باي كابل", "en": "Cable Curl", "muscle": "بايسبس", "sets": 3, "reps": "10-12", "rest": 60 }
+          ]
+        },
+        {
+          "label": "Lower A",
+          "focus": "قوة الأرجل",
+          "ex": [
+            { "name": "سكوات بالبار", "en": "Barbell Squat", "muscle": "أرجل", "sets": 4, "reps": "6-8", "rest": 150 },
+            { "name": "رفعة رومانية", "en": "Romanian Deadlift", "muscle": "خلفية", "sets": 3, "reps": "8-10", "rest": 120 },
+            { "name": "دفع أرجل", "en": "Leg Press", "muscle": "أرجل", "sets": 3, "reps": "10-12", "rest": 90 },
+            { "name": "ثني أرجل", "en": "Leg Curl", "muscle": "خلفية", "sets": 3, "reps": "12", "rest": 60 },
+            { "name": "رفع سمانة واقف", "en": "Standing Calf Raise", "muscle": "سمانة", "sets": 4, "reps": "15", "rest": 45 },
+            { "name": "بلانك", "en": "Plank", "muscle": "بطن", "sets": 3, "reps": "45 ثانية", "rest": 45 }
+          ]
+        },
+        { "label": "يوم راحة", "focus": "استشفاء", "rest": true },
+        {
+          "label": "Upper B",
+          "focus": "حجم الجزء العلوي",
+          "ex": [
+            { "name": "دمبل انكلاين", "en": "Incline Dumbbell Press", "muscle": "صدر علوي", "sets": 3, "reps": "8-10", "rest": 90 },
+            { "name": "عقلة مساعدة", "en": "Assisted Pull Up", "muscle": "ظهر", "sets": 3, "reps": "6-10", "rest": 120 },
+            { "name": "كتف ماكينة", "en": "Machine Shoulder Press", "muscle": "كتف", "sets": 3, "reps": "10-12", "rest": 90 },
+            { "name": "سحب أرضي بالكابل", "en": "Seated Cable Row", "muscle": "ظهر", "sets": 3, "reps": "10-12", "rest": 90 },
+            { "name": "رفرفة خلفية", "en": "Rear Delt Fly", "muscle": "كتف خلفي", "sets": 3, "reps": "15", "rest": 60 },
+            { "name": "تراي كابل", "en": "Triceps Pushdown", "muscle": "ترايسبس", "sets": 3, "reps": "10-12", "rest": 60 }
+          ]
+        },
+        {
+          "label": "Lower B",
+          "focus": "قوة وحجم الأرجل",
+          "ex": [
+            { "name": "رفعة أرضية", "en": "Deadlift", "muscle": "خلفية", "sets": 3, "reps": "5", "rest": 180 },
+            { "name": "سكوات بلغاري", "en": "Bulgarian Split Squat", "muscle": "أرجل", "sets": 3, "reps": "8-10/رجل", "rest": 90 },
+            { "name": "تمديد أرجل", "en": "Leg Extension", "muscle": "أمامية", "sets": 3, "reps": "12-15", "rest": 60 },
+            { "name": "ثني أرجل جلوس", "en": "Seated Leg Curl", "muscle": "خلفية", "sets": 3, "reps": "12", "rest": 60 },
+            { "name": "رفع سمانة واقف", "en": "Standing Calf Raise", "muscle": "سمانة", "sets": 4, "reps": "15", "rest": 45 },
+            { "name": "رفع ركب معلق", "en": "Hanging Knee Raise", "muscle": "بطن", "sets": 3, "reps": "15", "rest": 60 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home-3",
+      "name": "تمارين البيت — 3 أيام",
+      "level": "مبتدئ",
+      "daysPerWeek": 3,
+      "duration": 40,
+      "description": "خطة كاملة بوزن الجسم ودمبل بسيط، مناسبة للبيت أو النادي الصغير.",
+      "schedule": [0, -1, 1, -1, 2, -1, -1],
+      "days": [
+        {
+          "label": "Full Body A",
+          "focus": "جسم كامل — قوة",
+          "ex": [
+            { "name": "سكوات بوزن الجسم", "en": "Bodyweight Squat", "muscle": "أرجل", "sets": 3, "reps": "15-20", "rest": 60 },
+            { "name": "بوش أب", "en": "Push Up", "muscle": "صدر", "sets": 4, "reps": "8-15", "rest": 60 },
+            { "name": "سحب دمبل بذراع واحدة", "en": "One Arm Dumbbell Row", "muscle": "ظهر", "sets": 3, "reps": "12/ذراع", "rest": 60 },
+            { "name": "جسر المؤخرة", "en": "Glute Bridge", "muscle": "أرجل", "sets": 3, "reps": "15", "rest": 45 },
+            { "name": "كتف دمبل", "en": "Dumbbell Shoulder Press", "muscle": "كتف", "sets": 3, "reps": "12", "rest": 60 },
+            { "name": "بلانك", "en": "Plank", "muscle": "بطن", "sets": 3, "reps": "30-45 ثانية", "rest": 45 }
+          ]
+        },
+        {
+          "label": "Full Body B",
+          "focus": "جسم كامل — توازن",
+          "ex": [
+            { "name": "طعن خلفي", "en": "Reverse Lunge", "muscle": "أرجل", "sets": 3, "reps": "10/رجل", "rest": 60 },
+            { "name": "بوش أب مائل", "en": "Incline Push Up", "muscle": "صدر", "sets": 4, "reps": "10-15", "rest": 60 },
+            { "name": "سحب بالاستيك", "en": "Band Row", "muscle": "ظهر", "sets": 3, "reps": "15", "rest": 45 },
+            { "name": "رفعة رومانية بالدمبل", "en": "Dumbbell RDL", "muscle": "خلفية", "sets": 3, "reps": "12", "rest": 60 },
+            { "name": "رفرفة جانبية", "en": "Lateral Raise", "muscle": "كتف جانبي", "sets": 3, "reps": "15", "rest": 45 },
+            { "name": "ديد باج", "en": "Dead Bug", "muscle": "بطن", "sets": 3, "reps": "12", "rest": 45 }
+          ]
+        },
+        {
+          "label": "Full Body C",
+          "focus": "جسم كامل — كونديشننج",
+          "ex": [
+            { "name": "سكوات نط", "en": "Jump Squat", "muscle": "أرجل", "sets": 3, "reps": "12-15", "rest": 60 },
+            { "name": "بوش أب بايك", "en": "Pike Push Up", "muscle": "كتف", "sets": 3, "reps": "8-12", "rest": 60 },
+            { "name": "سحب دمبل بذراع واحدة", "en": "One Arm Row", "muscle": "ظهر", "sets": 3, "reps": "12/ذراع", "rest": 60 },
+            { "name": "هيب ثراست", "en": "Hip Thrust", "muscle": "أرجل", "sets": 3, "reps": "15", "rest": 60 },
+            { "name": "تراي ديبس على كرسي", "en": "Chair Triceps Dips", "muscle": "ترايسبس", "sets": 3, "reps": "10-12", "rest": 45 },
+            { "name": "ماونتن كلايمبر", "en": "Mountain Climbers", "muscle": "بطن", "sets": 3, "reps": "30 ثانية", "rest": 45 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "beginner-3",
+      "name": "بداية الجيم — 3 أيام",
+      "level": "مبتدئ",
+      "daysPerWeek": 3,
+      "duration": 50,
+      "description": "أساسيات بسيطة تبنى عضل وتعلّمك الحركة الصح من أول أسبوع.",
+      "schedule": [0, -1, 1, -1, 2, -1, -1],
+      "days": [
+        {
+          "label": "Full Body A",
+          "focus": "أساسيات الجسم كامل",
+          "ex": [
+            { "name": "دفع أرجل", "en": "Leg Press", "muscle": "أرجل", "sets": 3, "reps": "12", "rest": 90 },
+            { "name": "صدر ماكينة", "en": "Chest Press Machine", "muscle": "صدر", "sets": 3, "reps": "12", "rest": 90 },
+            { "name": "سحب أمامي", "en": "Lat Pulldown", "muscle": "ظهر", "sets": 3, "reps": "12", "rest": 90 },
+            { "name": "كتف ماكينة", "en": "Shoulder Press Machine", "muscle": "كتف", "sets": 3, "reps": "12", "rest": 60 },
+            { "name": "بلانك", "en": "Plank", "muscle": "بطن", "sets": 3, "reps": "30 ثانية", "rest": 45 }
+          ]
+        },
+        {
+          "label": "Full Body B",
+          "focus": "أساسيات الجسم كامل",
+          "ex": [
+            { "name": "سكوات جوبلت", "en": "Goblet Squat", "muscle": "أرجل", "sets": 3, "reps": "12", "rest": 90 },
+            { "name": "دمبل انكلاين", "en": "Incline Dumbbell Press", "muscle": "صدر", "sets": 3, "reps": "12", "rest": 90 },
+            { "name": "سحب أرضي", "en": "Seated Row", "muscle": "ظهر", "sets": 3, "reps": "12", "rest": 90 },
+            { "name": "رفرفة جانبية", "en": "Lateral Raise", "muscle": "كتف جانبي", "sets": 3, "reps": "15", "rest": 45 },
+            { "name": "باي دمبل", "en": "Dumbbell Curl", "muscle": "بايسبس", "sets": 3, "reps": "12", "rest": 45 }
+          ]
+        },
+        {
+          "label": "Full Body C",
+          "focus": "أساسيات الجسم كامل",
+          "ex": [
+            { "name": "رفعة رومانية", "en": "Romanian Deadlift", "muscle": "خلفية", "sets": 3, "reps": "10", "rest": 90 },
+            { "name": "عقلة مساعدة", "en": "Assisted Pull Up", "muscle": "ظهر", "sets": 3, "reps": "8", "rest": 90 },
+            { "name": "ثني أرجل", "en": "Leg Curl", "muscle": "خلفية", "sets": 3, "reps": "12", "rest": 60 },
+            { "name": "تراي كابل", "en": "Triceps Pushdown", "muscle": "ترايسبس", "sets": 3, "reps": "12", "rest": 60 },
+            { "name": "رفع سمانة", "en": "Calf Raise", "muscle": "سمانة", "sets": 3, "reps": "15", "rest": 45 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gym-5-split",
+      "name": "خطة الجيم — 5 أيام",
+      "level": "متوسط",
+      "daysPerWeek": 5,
+      "duration": 75,
+      "description": "تقسيمة خمسة أيام بالماكينات والكابل: دفع، سحب، أرجل، صدر وظهر، كتف وذراع. مناسبة لو معندكش جدول جاهز وعايز تبدأ فوراً.",
+      "schedule": [0, 1, 2, -1, 3, 4, -1],
+      "days": [
+        {
+          "label": "Push",
+          "focus": "صدر · كتف · ترايسبس",
+          "ex": [
+            { "name": "صدر انكلاين ماكينة", "en": "Incline Chest Press Machine", "muscle": "صدر علوي", "sets": 3, "reps": "8-15", "rest": 90 },
+            { "name": "صدر انكلاين 30 درجة", "en": "30-Degree Incline Chest Press", "muscle": "صدر علوي", "sets": 2, "reps": "8-15", "rest": 90 },
+            { "name": "كلافيكيولار برس بالكابل", "en": "SA Cable Clavicular Press", "muscle": "صدر علوي", "sets": 3, "reps": "6-10", "rest": 90 },
+            { "name": "كتف دمبل", "en": "DB Shoulder Press", "muscle": "كتف", "sets": 3, "reps": "8-12", "rest": 90 },
+            { "name": "رفرفة جانبية ماكينة", "en": "Machine Lateral Raises", "muscle": "كتف جانبي", "sets": 3, "reps": "8-12", "rest": 60 },
+            { "name": "ترايسبس كابل متقاطع", "en": "Cross Cable Triceps Extension", "muscle": "ترايسبس", "sets": 3, "reps": "8-12", "rest": 60 }
+          ]
+        },
+        {
+          "label": "Pull",
+          "focus": "ظهر · كتف خلفي · بايسبس",
+          "ex": [
+            { "name": "سحب أرضي واسع بالكابل", "en": "Wide Grip Seated Cable Row", "muscle": "ظهر", "sets": 3, "reps": "8-15", "rest": 90 },
+            { "name": "سحب دمبل للظهر العلوي", "en": "Upper Back Dumbbell Row", "muscle": "ظهر علوي", "sets": 3, "reps": "8-15", "rest": 90 },
+            { "name": "سحب أمامي واسع", "en": "Wide Grip Lat Pulldown", "muscle": "ظهر", "sets": 3, "reps": "6-10", "rest": 90 },
+            { "name": "رفرفة خلفية كابل", "en": "Cable Rear Delt", "muscle": "كتف خلفي", "sets": 3, "reps": "8-12", "rest": 60 },
+            { "name": "بايسبس بار مستقيم", "en": "Straight Bar Biceps Curl", "muscle": "بايسبس", "sets": 3, "reps": "8-12", "rest": 60 }
+          ]
+        },
+        {
+          "label": "Legs",
+          "focus": "أرجل كاملة · سمانة · فخذ داخلي",
+          "ex": [
+            { "name": "رفع سمانة واقف", "en": "Standing Calf Raises", "muscle": "سمانة", "sets": 3, "reps": "8-15", "rest": 60 },
+            { "name": "سكوات سميث للفخذ الأمامي", "en": "Smith Squat Quads Focus", "muscle": "أرجل", "sets": 2, "reps": "8-15", "rest": 120 },
+            { "name": "دفع أرجل", "en": "Leg Press", "muscle": "أرجل", "sets": 2, "reps": "6-10", "rest": 120 },
+            { "name": "تمديد أرجل", "en": "Leg Extension", "muscle": "أمامية", "sets": 3, "reps": "8-12", "rest": 60 },
+            { "name": "ثني أرجل جلوس", "en": "Seated Leg Curl", "muscle": "خلفية", "sets": 3, "reps": "8-12", "rest": 60 },
+            { "name": "رفعة رومانية بالدمبل", "en": "RDL DB", "muscle": "خلفية", "sets": 2, "reps": "6-10", "rest": 90 },
+            { "name": "ضم أرجل ماكينة", "en": "Machine Adduction", "muscle": "فخذ داخلي", "sets": 2, "reps": "8-12", "rest": 60 }
+          ]
+        },
+        {
+          "label": "Chest & Back",
+          "focus": "صدر · ظهر · ترابيس",
+          "ex": [
+            { "name": "بنش مستوي بالدمبل", "en": "Dumbbells Flat Press", "muscle": "صدر", "sets": 3, "reps": "8-15", "rest": 90 },
+            { "name": "سحب أمامي واسع", "en": "Wide Lat Pulldown", "muscle": "ظهر", "sets": 3, "reps": "8-15", "rest": 90 },
+            { "name": "بيك ديك ماكينة", "en": "Pec Dec Machine", "muscle": "صدر", "sets": 2, "reps": "6-10", "rest": 60 },
+            { "name": "سحب أرضي بذراع واحدة", "en": "SA Seated Lat Row", "muscle": "ظهر", "sets": 3, "reps": "8-12", "rest": 90 },
+            { "name": "كروس أوفر كابل", "en": "Cable Crossover", "muscle": "صدر", "sets": 2, "reps": "8-12", "rest": 60 },
+            { "name": "هز أكتاف كابل", "en": "Cable Shrugs", "muscle": "ترابيس", "sets": 3, "reps": "6-10", "rest": 60 }
+          ]
+        },
+        {
+          "label": "Shoulders & Arms",
+          "focus": "كتف جانبي · ترايسبس · بايسبس",
+          "ex": [
+            { "name": "رفرفة جانبية كابل عالية", "en": "High Cable Lateral Raises", "muscle": "كتف جانبي", "sets": 3, "reps": "8-15", "rest": 60 },
+            { "name": "رفرفة جانبية دمبل", "en": "DB Lateral Raises", "muscle": "كتف جانبي", "sets": 2, "reps": "8-15", "rest": 60 },
+            { "name": "رفرفة خلفية كابل", "en": "Cable Rear Delt", "muscle": "كتف خلفي", "sets": 3, "reps": "6-10", "rest": 60 },
+            { "name": "ترايسبس كابل فوق الرأس", "en": "Cable Overhead Triceps", "muscle": "ترايسبس", "sets": 2, "reps": "8-12", "rest": 60 },
+            { "name": "ترايسبس كابل متقاطع", "en": "Cross Cable Triceps Extension", "muscle": "ترايسبس", "sets": 2, "reps": "8-12", "rest": 60 },
+            { "name": "بريتشر كيرل", "en": "Preacher Curl", "muscle": "بايسبس", "sets": 2, "reps": "6-10", "rest": 60 },
+            { "name": "بايسبس كابل من الخلف", "en": "Face Away Cable Bicep", "muscle": "بايسبس", "sets": 2, "reps": "8-12", "rest": 60 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gym-5-pplul",
+      "name": "خطة PPLUL — 5 أيام",
+      "level": "متوسط",
+      "daysPerWeek": 5,
+      "duration": 75,
+      "description": "تقسيمة Push / Pull / Lower A / Upper / Lower B من جدول الجيم: 5 أيام، 6–7 تمارين لكل يوم، ومجاميع فعلية 2 مع مجاميع تسخين. مناسبة لو معندكش جدول جاهز وعايز تبدأ فوراً.",
+      "schedule": [0, 1, 2, -1, 3, 4, -1],
+      "days": [
+        {
+          "label": "Push",
+          "focus": "صدر · كتف · ترايسبس · بطن",
+          "ex": [
+            { "name": "رفرفة جانبية ماكينة", "en": "Machine Lateral Raises", "muscle": "كتف جانبي", "sets": 2, "reps": "6-8", "rest": 60 },
+            { "name": "صدر انكلاين ماكينة", "en": "Incline Chest Press Machine", "muscle": "صدر علوي", "sets": 2, "reps": "6-8", "rest": 120 },
+            { "name": "صدر ماكينة مستوي", "en": "Chest Press Machine", "muscle": "صدر", "sets": 2, "reps": "8-10", "rest": 120 },
+            { "name": "ترايسبس كابل بذراع واحدة", "en": "SA Tricep Pushdown", "muscle": "ترايسبس", "sets": 2, "reps": "6-10", "rest": 60 },
+            { "name": "ترايسبس فوق الرأس", "en": "Overhead Extension", "muscle": "ترايسبس", "sets": 2, "reps": "6-10", "rest": 60 },
+            { "name": "كرنش بسحب عالي", "en": "Lat Pulldown Crunches", "muscle": "بطن", "sets": 2, "reps": "6-10", "rest": 60 },
+            { "name": "ثني رسغ", "en": "Wrist Curl", "muscle": "سواعد", "sets": 2, "reps": "6-10", "rest": 60 }
+          ]
+        },
+        {
+          "label": "Pull",
+          "focus": "ظهر · كتف خلفي · بايسبس",
+          "ex": [
+            { "name": "سحب تي بار", "en": "T-Bar Row", "muscle": "ظهر", "sets": 2, "reps": "5-7", "rest": 150 },
+            { "name": "سحب لات كابل بذراع واحدة", "en": "Cable SA Lat Row", "muscle": "ظهر", "sets": 2, "reps": "6-10", "rest": 90 },
+            { "name": "سحب أمامي واسع بالكابل", "en": "Cable Wide Grip Lat Pulldown", "muscle": "ظهر", "sets": 2, "reps": "6-8", "rest": 90 },
+            { "name": "هز أكتاف كيلسو تي بار", "en": "T-Bar Kelso Shrugs", "muscle": "ترابيس", "sets": 2, "reps": "6-8", "rest": 60 },
+            { "name": "رفرفة خلفية بيك ديك", "en": "Reverse Pec Deck", "muscle": "كتف خلفي", "sets": 2, "reps": "6-10", "rest": 60 },
+            { "name": "بريتشر كيرل دمبل", "en": "DB Preacher Curl", "muscle": "بايسبس", "sets": 2, "reps": "6-10", "rest": 60 }
+          ]
+        },
+        {
+          "label": "Lower A",
+          "focus": "أرجل · سمانة · فخذ داخلي · سواعد",
+          "ex": [
+            { "name": "رفع سمانة على دفع الأرجل", "en": "Leg Press Calf Raises", "muscle": "سمانة", "sets": 2, "reps": "6-8", "rest": 60 },
+            { "name": "هاك سكوات", "en": "Hack Squat", "muscle": "أرجل", "sets": 2, "reps": "5-8", "rest": 150 },
+            { "name": "تمديد أرجل", "en": "Leg Extension", "muscle": "أمامية", "sets": 2, "reps": "6-10", "rest": 60 },
+            { "name": "ضم الفخذ ماكينة", "en": "Hip Adduction", "muscle": "فخذ داخلي", "sets": 2, "reps": "6-8", "rest": 60 },
+            { "name": "ثني أرجل جلوس", "en": "Seated Leg Curl", "muscle": "خلفية", "sets": 2, "reps": "6-10", "rest": 60 },
+            { "name": "بايسبس قبضة معكوسة", "en": "Reverse Grip Curls", "muscle": "سواعد", "sets": 2, "reps": "6-10", "rest": 60 }
+          ]
+        },
+        {
+          "label": "Upper",
+          "focus": "ظهر · صدر · كتف · ذراع",
+          "ex": [
+            { "name": "سحب لات بذراع واحدة", "en": "SA Lat Row", "muscle": "ظهر", "sets": 2, "reps": "6-10", "rest": 90 },
+            { "name": "صدر ماكينة", "en": "Chest Press Machine", "muscle": "صدر", "sets": 2, "reps": "8-10", "rest": 120 },
+            { "name": "سحب للظهر العلوي", "en": "Upper Back Pulldown", "muscle": "ظهر علوي", "sets": 2, "reps": "6-8", "rest": 90 },
+            { "name": "كتف ماكينة", "en": "Machine Shoulder Press", "muscle": "كتف", "sets": 2, "reps": "6-10", "rest": 90 },
+            { "name": "ترايسبس كابل بذراع واحدة", "en": "SA Tricep Pushdown", "muscle": "ترايسبس", "sets": 2, "reps": "6-10", "rest": 60 },
+            { "name": "بريتشر كيرل دمبل", "en": "DB Preacher Curl", "muscle": "بايسبس", "sets": 2, "reps": "6-10", "rest": 60 },
+            { "name": "رفرفة جانبية ماكينة", "en": "Machine Lateral Raises", "muscle": "كتف جانبي", "sets": 2, "reps": "6-8", "rest": 60 }
+          ]
+        },
+        {
+          "label": "Lower B",
+          "focus": "أرجل خلفية · فخذ داخلي · سمانة · بطن",
+          "ex": [
+            { "name": "رفعة أرضية بأرجل شبه مستقيمة", "en": "Stiff-Leg Deadlift", "muscle": "خلفية", "sets": 2, "reps": "5-7", "rest": 150 },
+            { "name": "ضم الفخذ ماكينة", "en": "Hip Adduction", "muscle": "فخذ داخلي", "sets": 2, "reps": "6-8", "rest": 60 },
+            { "name": "ثني أرجل جلوس", "en": "Seated Leg Curl", "muscle": "خلفية", "sets": 2, "reps": "6-10", "rest": 60 },
+            { "name": "تمديد أرجل", "en": "Leg Extension", "muscle": "أمامية", "sets": 2, "reps": "6-10", "rest": 60 },
+            { "name": "كرنش بسحب عالي", "en": "Lat Pulldown Crunches", "muscle": "بطن", "sets": 2, "reps": "6-10", "rest": 60 },
+            { "name": "رفع سمانة على دفع الأرجل", "en": "Leg Press Calf Raises", "muscle": "سمانة", "sets": 2, "reps": "6-8", "rest": 60 },
+            { "name": "ثني رسغ", "en": "Wrist Curl", "muscle": "سواعد", "sets": 2, "reps": "6-10", "rest": 60 }
+          ]
+        }
+      ]
+    }
+  ]
+}
