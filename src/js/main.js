@@ -13,13 +13,11 @@ import { renderFood } from './ui/food.js';
 import { hideRestTimer, initTrainDialog, renderTrain } from './ui/train.js';
 import { renderProgress } from './ui/progress.js';
 import { renderProfile } from './ui/profile.js';
-import { renderPrayer } from './ui/prayer.js';
 import { loadFoods } from './services/food.js';
 import { loadPlans } from './services/plans.js';
 
 const PAGES = {
   home: { title: 'الرئيسية', render: renderHome },
-  prayer: { title: 'الصلاة', render: renderPrayer },
   food: { title: 'يوميات الأكل', render: renderFood },
   train: { title: 'خطة التمرين', render: renderTrain },
   progress: { title: 'التقدم', render: renderProgress },
@@ -81,9 +79,7 @@ function renderShell() {
 
 function renderPage() {
   const page = PAGES[currentPage] ? currentPage : 'home';
-  if (typeof PAGES[page].render === 'function') {
-    try { PAGES[page].render(); } catch(e) { console.error(e); }
-  }
+  PAGES[page].render();
   document.querySelectorAll('.view').forEach((view) => {
     view.hidden = view.dataset.page !== page;
   });
@@ -101,9 +97,8 @@ function renderPage() {
 function navigate(page) {
   if (!PAGES[page]) page = 'home';
   currentPage = page;
-  hideRestTimer?.();
+  hideRestTimer();
   renderPage();
-  try { if (page === 'prayer') renderPrayer(); } catch(e) {}
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -111,7 +106,6 @@ function renderAll() {
   applyTheme();
   renderShell();
   renderPage();
-  try { if (currentPage === 'prayer' || document.getElementById('view-prayer') && !document.getElementById('view-prayer').hidden) renderPrayer(); } catch(e) {}
 }
 
 function bindEvents() {
@@ -119,13 +113,7 @@ function bindEvents() {
     const nav = event.target.closest('[data-nav]');
     if (nav) {
       event.preventDefault();
-      const page = nav.dataset.nav;
-      if (PAGES[page]) {
-        navigate(page);
-        if (page === 'food') openFoodDialog({ meal: mealForTime() });
-        return;
-      }
-      navigate(page);
+      navigate(nav.dataset.nav);
       return;
     }
 
@@ -212,7 +200,6 @@ async function boot() {
     applyTheme();
     renderShell();
     renderPage();
-    try { if (currentPage === 'prayer') renderPrayer(); } catch(e) {}
   });
 
   renderAll();

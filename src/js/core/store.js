@@ -31,14 +31,7 @@ const DEFAULT_STATE = {
   customFoods: [],
   favorites: [],
   workouts: {},
-  planState: { activePlan: 'ppl-5' },
-  study: {
-    timetable: [],
-    assignments: [],
-    exams: [],
-    courses: [],
-    gpa: { grades: [], target: 4.0 }
-  }
+  planState: { activePlan: 'ppl-5' }
 };
 
 const clone = (value) => JSON.parse(JSON.stringify(value));
@@ -61,14 +54,7 @@ function load() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return clone(DEFAULT_STATE);
-    const parsed = merge(clone(DEFAULT_STATE), JSON.parse(raw));
-    if (!parsed.study) parsed.study = clone(DEFAULT_STATE.study);
-    if (!parsed.study.timetable) parsed.study.timetable = [];
-    if (!parsed.study.assignments) parsed.study.assignments = [];
-    if (!parsed.study.exams) parsed.study.exams = [];
-    if (!parsed.study.courses) parsed.study.courses = [];
-    if (!parsed.study.gpa) parsed.study.gpa = { grades: [], target: 4.0 };
-    return parsed;
+    return merge(clone(DEFAULT_STATE), JSON.parse(raw));
   } catch {
     return clone(DEFAULT_STATE);
   }
