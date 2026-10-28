@@ -74,9 +74,12 @@ function summaryCard(target) {
           <p class="eyebrow">${esc(relativeDay(viewDate))}</p>
           <h2>${fmt(totals.kcal)} <small>/ ${fmt(target.kcal)} سعرة</small></h2>
         </div>
-        <div class="summary-left ${over ? 'is-over' : ''}">
-          <span>${over ? 'زيادة' : 'باقي'}</span>
-          <strong>${fmt(Math.abs(left))}</strong>
+        <div class="food-summary-actions">
+          <button class="btn btn-ghost btn-sm" type="button" id="food-open-ai"><svg class="icon"><use href="#i-camera"/></svg> تحليل صورة بالذكاء الاصطناعي</button>
+          <div class="summary-left ${over ? 'is-over' : ''}">
+            <span>${over ? 'زيادة' : 'باقي'}</span>
+            <strong>${fmt(Math.abs(left))}</strong>
+          </div>
         </div>
       </div>
       ${progress(totals.kcal, target.kcal, over ? 'progress-coral' : '', 'تقدم السعرات')}
@@ -173,6 +176,10 @@ export function renderFood() {
         <h2>يوميات الأكل</h2>
       </div>
       ${dateNav()}
+      <button class="btn btn-ghost btn-sm food-ai-quick" id="food-ai-quick" type="button">
+        <svg class="icon"><use href="#i-camera"/></svg>
+        <span>صوّر أكلك بالـAI</span>
+      </button>
     </header>
     ${summaryCard(target)}
     ${copyBanner()}
@@ -187,6 +194,9 @@ export function renderFood() {
   </div>`;
 
   bind(root);
+  root.querySelector('#food-open-ai')?.addEventListener('click', () => openAiDialog({ date: viewDate }));
+  root.querySelector('#food-ai-quick')?.addEventListener('click', () => openAiDialog({ date: viewDate }));
+  root.querySelector('#food-ai-page')?.addEventListener('click', () => openAiDialog({ date: viewDate }));
 
   const pageTitle = document.getElementById('page-title');
   if (pageTitle) pageTitle.textContent = isToday(viewDate) ? 'يوميات الأكل' : `يوميات ${relativeDay(viewDate)}`;
